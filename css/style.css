@@ -1,0 +1,105 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  background: url(../images/san-franciso.jpg) no-repeat center center/cover fixed;
+  width: 100%;
+  height: 100vh;
+}
+.container > nav {
+  background-color: rgba(0,0,0,.5);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  transition: 2s;
+}
+.container > nav > ul {
+  list-style-type: none;
+  width: 40%;
+  margin: 155px auto; 
+}
+.container > nav > ul > li > a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: rgba(255,255,255,.9);
+  font-size: 22px;
+  line-height: 37px;
+  padding: 9px;
+}
+hr{
+  visibility: hidden;
+  width: 12%;
+  height: 3px;
+  margin: 0 auto;
+  background-color: rgba(129, 0, 0,.5);
+  border:0px solid rgba(129, 0, 0,.5);
+  border-radius: 2px;
+}
+.container > nav > ul > li > a:hover ~ hr {
+  visibility: visible;
+  animation: links 0.7s linear 0s 1 forwards;
+}
+@keyframes links{
+  0% { width: 0; }
+  50% { width: 12%; }
+  100% { width: 0; }
+}
+.container > #checkbox{
+  display: none;
+}
+.container > .bars > .bar-1{
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background-color: rgba(129, 0, 0,.9);
+  transition: 0.6s;
+  cursor: pointer;
+  z-index: 9999;
+  top: 17px;
+  left: 15px; 
+  border-radius: 2px;
+}
+.container > .bars > .bar-2{
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background-color: rgba(129, 0, 0,.9);
+  transition: 0.6s;
+  cursor: pointer;
+  z-index: 9999;
+  top: 24px;
+  left: 15px; 
+  border-radius: 2px;
+}
+.container > .bars > .bar-3{
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background-color: rgba(129, 0, 0,.9);
+  transition: 0.6s;
+  cursor: pointer;
+  z-index: 9999;
+  top: 31px;
+  left: 15px; 
+  border-radius: 2px;
+  transform-origin: left bottom;
+} 
+
+.container > #checkbox:checked ~ .bars > .bar-2{
+  opacity: 0;
+}
+.container > #checkbox:checked ~ .bars > .bar-1{
+  transform: rotate(405deg) translate(-2px,6px);
+}
+.container > #checkbox:checked ~ .bars > .bar-3{
+  transform: rotate(-45deg) ;
+}
+.container > input:checked ~ nav{
+  top: 0;
+}
+
